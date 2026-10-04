@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIDANABINCI.COM | Delicious Food, Made With Love</title>
+  <meta name="description" content="GIDANABINCI.COM - Order delicious local and everyday meals.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home">GIDANABINCI<span>.COM</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="toggleCart()">🛒 Cart <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">WELCOME TO GIDANABINCI.COM</p>
+        <h1>Good food.<br><span>Good mood.</span></h1>
+        <p>Fresh, tasty meals prepared with care and delivered with a smile.</p>
+        <a class="primary-btn" href="#menu">Order Food</a>
+      </div>
+      <div class="hero-food" aria-label="Food illustration">
+        <div class="plate">🍚</div>
+        <div class="floating f1">🥘</div>
+        <div class="floating f2">🍝</div>
+        <div class="floating f3">🥤</div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR MENU</p>
+          <h2>Choose your favourite</h2>
+        </div>
+        <p>Simple meals, great taste.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="food-card">
+          <div class="food-image kunu">🥤</div>
+          <div class="food-info">
+            <span class="tag">Drink</span>
+            <h3>Kunu Aya</h3>
+            <p>Refreshing tiger-nut drink, perfect with any meal.</p>
+            <div class="food-bottom"><strong>$400</strong><button onclick="addToCart('Kunu Aya',400)">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image tuwo">🍚</div>
+          <div class="food-info">
+            <span class="tag">Local Favourite</span>
+            <h3>Tuwon Shinkafa</h3>
+            <p>Soft traditional rice swallow served fresh and filling.</p>
+            <div class="food-bottom"><strong>$300</strong><button onclick="addToCart('Tuwon Shinkafa',300)">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image rice">🍛</div>
+          <div class="food-info">
+            <span class="tag">Popular</span>
+            <h3>Rice</h3>
+            <p>Deliciously prepared rice for a satisfying everyday meal.</p>
+            <div class="food-bottom"><strong>$300</strong><button onclick="addToCart('Rice',300)">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image spaghetti">🍝</div>
+          <div class="food-info">
+            <span class="tag">Chef's Pick</span>
+            <h3>Spaghetti</h3>
+            <p>Well-seasoned spaghetti prepared fresh to order.</p>
+            <div class="food-bottom"><strong>$340</strong><button onclick="addToCart('Spaghetti',340)">Add to cart</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div>
+        <p class="eyebrow">WHY GIDANABINCI?</p>
+        <h2>Made for people who love good food.</h2>
+      </div>
+      <div class="about-copy">
+        <p>GIDANABINCI.COM brings tasty local and everyday meals into one simple online menu. Browse, add your favourites, and place your order.</p>
+        <div class="features">
+          <div>✓ Freshly prepared</div>
+          <div>✓ Easy ordering</div>
+          <div>✓ Great taste</div>
+          <div>✓ Friendly service</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Ready to order?</h2>
+      <p>Use the cart to select your food. Add your details and submit your order.</p>
+      <a class="primary-btn" href="#menu">View Menu</a>
+    </section>
+  </main>
+
+  <aside id="cartPanel" class="cart-panel">
+    <div class="cart-header"><h2>Your Order</h2><button onclick="toggleCart()">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty">Your cart is empty.</p></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <form id="orderForm" onsubmit="submitOrder(event)">
+      <input id="customerName" required placeholder="Your name">
+      <input id="customerPhone" required placeholder="Phone number">
+      <input id="customerAddress" required placeholder="Delivery address">
+      <button class="checkout" type="submit">Place Order</button>
+    </form>
+  </aside>
+  <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+  <footer>
+    <div><strong>GIDANABINCI<span>.COM</span></strong><p>Delicious food, made with love.</p></div>
+    <div><p>© 2026 GIDANABINCI.COM. All rights reserved.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
